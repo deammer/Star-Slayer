@@ -1,0 +1,21 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerShipController.cs">
+    <Files>
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\LevelEditor.cs" Line="1" Column="1" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapData.cs" Line="1" Column="1" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\XMLParser.cs" Line="1" Column="1" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\EditorGrid.cs" Line="1" Column="1" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapGraphics\GTileMap.cs" Line="14" Column="32" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapGraphics\GTileMapInspector.cs" Line="1" Column="1" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapData\DTileMap.cs" Line="1" Column="1" />
+      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerShipController.cs" Line="33" Column="5" />
+      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="76" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

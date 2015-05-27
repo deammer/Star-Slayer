@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: d0807af32c75cc049b2d1be2482ee144
+timeCreated: 1432754636
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: player_ships_0
+    21300002: player_ships_1
+    21300004: player_ships_2
+    21300006: player_ships_3
+    21300008: player_ships_4
+    21300010: player_ships_5
+    21300012: player_ships_6
+    21300014: player_ships_7
+    21300016: player_ships_8
+    21300018: player_ships_9
+    21300020: player_ships_10
+    21300022: player_ships_11
+    21300024: player_ships_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: player_ships_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1194
+        width: 654
+        height: 350
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_2
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 991
+        width: 396
+        height: 264
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 896
+        width: 609
+        height: 293
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 525
+        width: 599
+        height: 365
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_6
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 579
+        width: 543
+        height: 311
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 240
+        width: 574
+        height: 279
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_8
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 225
+        width: 559
+        height: 294
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_9
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 160
+        width: 348
+        height: 413
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 493
+        height: 233
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_11
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1248
+        width: 537
+        height: 296
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: player_ships_12
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 909
+        width: 508
+        height: 283
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
