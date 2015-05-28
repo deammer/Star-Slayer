@@ -5,6 +5,8 @@ public class Weapon : MonoBehaviour
 {
 	public Transform ProjectilePrefab;
 
+	[Range(0, 1f)]
+	public float accuracy = 1f;
 	public float ShotsPerSecond = 4f;
 
 	private string tag;
@@ -37,6 +39,11 @@ public class Weapon : MonoBehaviour
 		}
 	}
 
+	protected Vector2 GetAccuracyOffset()
+	{
+		return new Vector2(0, Random.Range(-(1f - accuracy), 1f - accuracy));
+	}
+
 	virtual protected void Shoot()
 	{
 		Transform bullet = Instantiate(ProjectilePrefab);
@@ -44,6 +51,6 @@ public class Weapon : MonoBehaviour
 
 		Projectile projectile = bullet.GetComponent<Projectile>();
 		projectile.ParentTag = tag;
-		projectile.Angle = Vector2.right;
+		projectile.Angle = Vector2.right + GetAccuracyOffset();
 	}
 }

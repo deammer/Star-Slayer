@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerShipController : MonoBehaviour
 {
-	public Weapon weapon;
+	public Transform weapon;
+	private Weapon _weaponController;
 
 	public int health = 100;
 	public int shield = 50;
@@ -42,6 +43,9 @@ public class PlayerShipController : MonoBehaviour
 		_currentHealth = health;
 		_currentShield = shield;
 		_currentEnergy = energy;
+
+		if (weapon != null)
+			_weaponController = weapon.GetComponent<Weapon> ();
 	}
 
 	void Update ()
@@ -68,8 +72,8 @@ public class PlayerShipController : MonoBehaviour
 				transform.rotation = Quaternion.AngleAxis(v * maxRotation, Vector3.forward);
 		}
 
-		if (weapon != null && Input.GetButton("Fire"))
-			weapon.Trigger();
+		if (weapon != null && Input.GetButton ("Fire"))
+			_weaponController.Trigger ();
 	}
 
 	public void Damage(int amount, Transform other)

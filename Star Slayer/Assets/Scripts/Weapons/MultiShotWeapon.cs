@@ -35,7 +35,7 @@ public class MultiShotWeapon : Weapon
 				
 				Projectile projectile = bullet.GetComponent<Projectile>();
 				projectile.ParentTag = tag;
-				projectile.Angle = Vector2.right;
+				projectile.Angle = Vector2.right + GetAccuracyOffset();
 			}
 		}
 	}
