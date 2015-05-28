@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerShipController : MonoBehaviour
 {
+	public Weapon weapon;
+
 	public int health = 100;
 	public int shield = 50;
 	public int energy = 100;
@@ -14,9 +16,9 @@ public class PlayerShipController : MonoBehaviour
 	public float shieldRatio { get { return _currentShield == 0 ? 0 : _currentShield / (float) shield; } }
 	public float energyRatio { get { return _currentEnergy == 0 ? 0 : _currentEnergy / (float) energy; } }
 
-	public float moveSpeedX = 40;
-	public float moveSpeedY = 50f;
+	public float moveSpeed = 25f;
 
+	public bool allowRotation = true;
 	public float maxRotation = 15f;
 
 	private Vector3 screenSW;
@@ -47,8 +49,7 @@ public class PlayerShipController : MonoBehaviour
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
 		
-		Vector3 moveDirection = new Vector3(h * moveSpeedX, v * moveSpeedY, 0);
-		moveDirection *= Time.deltaTime;
+		Vector3 moveDirection = new Vector3(h, v, 0).normalized * moveSpeed * Time.deltaTime;
 		transform.position += moveDirection;
 
 		// keep the ship within bounds
@@ -59,10 +60,16 @@ public class PlayerShipController : MonoBehaviour
 			_currentShield = Mathf.Min(shield, _currentShield + shieldRegen * Time.deltaTime);
 
 		// rotate the ship
-		if (v == 0f)
-			transform.rotation = Quaternion.identity;
-		else
-			transform.rotation = Quaternion.AngleAxis(v * maxRotation, Vector3.forward);
+		if (allowRotation)
+		{
+			if (v == 0f)
+				transform.rotation = Quaternion.identity;
+			else
+				transform.rotation = Quaternion.AngleAxis(v * maxRotation, Vector3.forward);
+		}
+
+		if (weapon != null && Input.GetButton("Fire"))
+			weapon.Trigger();
 	}
 
 	public void Damage(int amount, Transform other)

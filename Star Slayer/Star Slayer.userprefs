@@ -1,17 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerShipController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\MultiShotWeapon.cs">
     <Files>
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\LevelEditor.cs" Line="1" Column="1" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapData.cs" Line="1" Column="1" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\XMLParser.cs" Line="1" Column="1" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\EditorGrid.cs" Line="1" Column="1" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapGraphics\GTileMap.cs" Line="14" Column="32" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapGraphics\GTileMapInspector.cs" Line="1" Column="1" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapData\DTileMap.cs" Line="1" Column="1" />
-      <File FileName="..\..\Mutant Gangland\Assets\Scripts\MapLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerShipController.cs" Line="33" Column="5" />
-      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="76" Column="1" />
+      <File FileName="Assets\Scripts\PlayerShipController.cs" Line="52" Column="88" />
+      <File FileName="Assets\Scripts\ScrollingScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="8" Column="35" />
+      <File FileName="Assets\Scripts\Weapons\MultiShotWeapon.cs" Line="21" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
