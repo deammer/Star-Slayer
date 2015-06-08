@@ -52,9 +52,19 @@ public class PlayerShipController : MonoBehaviour
 	{
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis("Vertical");
+
+		// override if keyboard input
+		if (Input.GetKeyDown (KeyCode.A))
+			h = -1f;
+		if (Input.GetKeyDown (KeyCode.D))
+			h = 1f;
+		if (Input.GetKeyDown (KeyCode.W))
+			v = 1f;
+		if (Input.GetKeyDown (KeyCode.S))
+			v = -1f;
 		
 		Vector3 moveDirection = new Vector3(h, v, 0).normalized * moveSpeed * Time.deltaTime;
-		transform.position += moveDirection;
+		transform.Translate( moveDirection);
 
 		// keep the ship within bounds
 		transform.position = new Vector3(Mathf.Clamp(transform.position.x, screenSW.x, screenNE.x),
@@ -114,8 +124,4 @@ public class PlayerShipController : MonoBehaviour
 		}
 		_shieldFading = false;
 	}
-
-	// do the mvt and physics here?
-	void FixedUpdate ()
-	{}
 }

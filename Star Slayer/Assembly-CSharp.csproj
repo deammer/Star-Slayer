@@ -46,11 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HomingProjectile.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\OffsetScroller.cs" />
      <Compile Include="Assets\Scripts\PlayerShipController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
+     <Compile Include="Assets\Scripts\WaveGenerator.cs" />
+     <Compile Include="Assets\Scripts\Weapons\ComboWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\MultiShotWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
  <Reference Include="UnityEngine.UI">

@@ -29,7 +29,7 @@ public class Weapon : MonoBehaviour
 			canShoot = true;
 	}
 
-	public void Trigger()
+	virtual public void Trigger()
 	{
 		if (canShoot)
 		{
@@ -39,9 +39,9 @@ public class Weapon : MonoBehaviour
 		}
 	}
 
-	protected Vector2 GetAccuracyOffset()
+	protected float GetAccuracyOffset()
 	{
-		return new Vector2(0, Random.Range(-(1f - accuracy), 1f - accuracy));
+		return Random.Range (-(accuracy * 45f - 45f), accuracy * 45f - 45f);
 	}
 
 	virtual protected void Shoot()
@@ -51,6 +51,6 @@ public class Weapon : MonoBehaviour
 
 		Projectile projectile = bullet.GetComponent<Projectile>();
 		projectile.ParentTag = tag;
-		projectile.Angle = Vector2.right + GetAccuracyOffset();
+		projectile.Angle = 0 + GetAccuracyOffset();
 	}
 }
