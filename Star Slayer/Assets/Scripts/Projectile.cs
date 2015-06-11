@@ -21,7 +21,6 @@ public class Projectile : MonoBehaviour
 		transform.rotation = rotation;
 
 		direction = new Vector3 (Mathf.Cos (Angle * Mathf.PI / 180), Mathf.Sin (Angle * Mathf.PI / 180), 0);
-		Debug.Log (direction.ToString ());
 		Destroy(gameObject, 3f);
 	}
 

@@ -9,18 +9,16 @@ public class Weapon : MonoBehaviour
 	public float accuracy = 1f;
 	public float ShotsPerSecond = 4f;
 
-	private string tag;
+	protected string parentTag;
 	private float shootingDelay;
 	private bool canShoot;
 
 	void Start ()
 	{
 		canShoot = true;
-
-		if (transform.parent != null)
-			tag = transform.parent.gameObject.tag;
+		parentTag = transform.parent.gameObject.tag;
 	}
-	
+
 	void Update ()
 	{
 		if (shootingDelay > 0)
@@ -50,7 +48,10 @@ public class Weapon : MonoBehaviour
 		bullet.position = transform.position;
 
 		Projectile projectile = bullet.GetComponent<Projectile>();
-		projectile.ParentTag = tag;
-		projectile.Angle = 0 + GetAccuracyOffset();
+		if (projectile != null)
+		{
+			projectile.ParentTag = parentTag;
+			projectile.Angle = 0 + GetAccuracyOffset ();
+		}
 	}
 }

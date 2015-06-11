@@ -46,7 +46,7 @@ public class WaveGenerator : MonoBehaviour
 		
 		yield return null;  // prevents crash if all delays are 0
 		
-		Debug.Log("Spawn loop complete.");
+		//Debug.Log("Spawn loop complete.");
 	}
 	
 	void OnGUI()
