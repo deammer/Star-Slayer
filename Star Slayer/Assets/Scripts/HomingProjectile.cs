@@ -31,8 +31,6 @@ public class HomingProjectile : Projectile
 		var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // between -180 and 180
 		if (Mathf.Abs(targetAngle - angle) <= turnRate * Time.deltaTime)
 			angle = targetAngle;
-	//	else
-	//		angle = Mathf.Sign (a) * turnRate * Time.deltaTime;
 
 		while (angle < 0) angle += 360f;
 		while (angle > 360) angle -= 360f;

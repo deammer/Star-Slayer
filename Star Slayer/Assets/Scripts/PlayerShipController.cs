@@ -17,6 +17,8 @@ public class PlayerShipController : MonoBehaviour
 	public float shieldRatio { get { return _currentShield == 0 ? 0 : _currentShield / (float) shield; } }
 	public float energyRatio { get { return _currentEnergy == 0 ? 0 : _currentEnergy / (float) energy; } }
 
+	public Vector2 direction { get { return _direction; } }
+	private Vector2 _direction = new Vector2();
 	public float moveSpeed = 25f;
 
 	public bool allowRotation = true;
@@ -50,20 +52,20 @@ public class PlayerShipController : MonoBehaviour
 
 	void Update ()
 	{
-		float h = Input.GetAxis("Horizontal");
-		float v = Input.GetAxis("Vertical");
+		_direction.x = Input.GetAxis("Horizontal");
+		_direction.y = Input.GetAxis("Vertical");
 
 		// override if keyboard input
 		if (Input.GetKeyDown (KeyCode.A))
-			h = -1f;
+			_direction.x = -1f;
 		if (Input.GetKeyDown (KeyCode.D))
-			h = 1f;
+			_direction.x = 1f;
 		if (Input.GetKeyDown (KeyCode.W))
-			v = 1f;
+			_direction.y = 1f;
 		if (Input.GetKeyDown (KeyCode.S))
-			v = -1f;
+			_direction.y = -1f;
 		
-		Vector3 moveDirection = new Vector3(h, v, 0).normalized * moveSpeed * Time.deltaTime;
+		Vector3 moveDirection = new Vector3(_direction.x, _direction.y, 0).normalized * moveSpeed * Time.deltaTime;
 		transform.Translate( moveDirection);
 
 		// keep the ship within bounds
@@ -76,13 +78,13 @@ public class PlayerShipController : MonoBehaviour
 		// rotate the ship
 		if (allowRotation)
 		{
-			if (v == 0f)
+			if (_direction.y == 0f)
 				transform.rotation = Quaternion.identity;
 			else
-				transform.rotation = Quaternion.AngleAxis(v * maxRotation, Vector3.forward);
+				transform.rotation = Quaternion.AngleAxis(direction.y * maxRotation, Vector3.forward);
 		}
 
-		if (weapon != null && Input.GetButton ("Fire"))
+		if (weapon != null && (Input.GetButton ("Fire") || Input.GetButton("Controller A")))
 			_weaponController.Trigger ();
 	}
 
