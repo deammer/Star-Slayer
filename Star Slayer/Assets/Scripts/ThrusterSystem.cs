@@ -28,29 +28,40 @@ public class ThrusterSystem : MonoBehaviour
 
 		if (direction.x >= 0)
 		{
-			backThruster.gameObject.SetActive(true);
-			frontThruster.gameObject.SetActive(false);
+			SetThrustersInTransform(backThruster, true);
+			SetThrustersInTransform(frontThruster, false);
 		}
 		else
 		{
-			frontThruster.gameObject.SetActive(true);
-			backThruster.gameObject.SetActive(false);
+			SetThrustersInTransform(frontThruster, true);
+			SetThrustersInTransform(backThruster, false);
 		}
 
 		if (direction.y > 0)
 		{
-			bottomThruster.gameObject.SetActive(true);
-			topThruster.gameObject.SetActive(false);
+			SetThrustersInTransform(bottomThruster, true);
+			SetThrustersInTransform(topThruster, false);
 		}
 		else if (direction.y < 0)
 		{
-			bottomThruster.gameObject.SetActive(false);
-			topThruster.gameObject.SetActive(true);
+			SetThrustersInTransform(bottomThruster, false);
+			SetThrustersInTransform(topThruster, true);
 		}
 		else
 		{
-			bottomThruster.gameObject.SetActive(false);
-			topThruster.gameObject.SetActive(false);
+			SetThrustersInTransform(bottomThruster, false);
+			SetThrustersInTransform(topThruster, false);
+		}
+	}
+
+	private void SetThrustersInTransform(Transform t, bool enable)
+	{
+		ParticleSystem system;
+		foreach (Transform child in t)
+		{
+			system = child.GetComponent<ParticleSystem>();
+			if (system != null)
+				system.enableEmission = enable;
 		}
 	}
 }

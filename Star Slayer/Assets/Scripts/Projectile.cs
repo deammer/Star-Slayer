@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 	public float Angle;
 
 	public float Speed = 20;
-	public int Damage;
+	public int damage = 1;
 	public Transform ImpactEffect;
 
 	private Quaternion rotation;
@@ -39,6 +39,8 @@ public class Projectile : MonoBehaviour
 		if (other.tag == "Enemy" && ParentTag == "Player")
 		{
 			hasImpacted = true;
+			if (other.transform.GetComponent<Enemy>() != null)
+				other.transform.GetComponent<Enemy>().Damage(damage);
 		}
 		else if (other.tag == "Player" && ParentTag == "Enemy")
 		{
