@@ -6,94 +6,104 @@ public class HomingProjectile : Projectile
 	public float turnRate = 90f;
 
 	private Transform target;
-	private float angle;
 	private Vector2 velocity = new Vector2();
+	private float currentSpeed = 0;
+
+	[SerializeField]
+	private float acceleration = 5f;
 
 	void Start ()
 	{
 		Destroy (gameObject, 5);
-		target = GameObject.FindWithTag (ParentTag == "Player" ? "Enemy" : "Player").transform;
-	}
-	
-	void Update ()
-	{
-		var dx = target.position.x - transform.position.x;
-		var dy = target.position.y - transform.position.y;
+		FindTarget();
 
-		/*var dotProduct = velocity.y * dx - velocity.x * dy;
-		if (dotProduct > 0)
-			angle += turnRate * Time.deltaTime;
-		else
-			angle -= turnRate * Time.deltaTime;*/
-
-		Vector2 direction = transform.position - target.position;
-		//direction = target.InverseTransformDirection(direction);
-		var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // between -180 and 180
-
-		#region Doesn't really work
-		// match the angle to -180 -> 180
-		while (angle > 180) angle -= 360f;
-		while (angle <= -180) angle += 360f;
-
-		float angleDiff = targetAngle - angle;
-		angleDiff = Mathf.Clamp(angleDiff, -turnRate * Time.deltaTime, turnRate * Time.deltaTime);
-
-		if (Mathf.Abs(targetAngle - angle) <= turnRate * Time.deltaTime)
-			angle = targetAngle;
-		else
-			angle += angleDiff;
-
-		#endregion
-
-		#region New approach
-
-		targetAngle = Mathf.Atan2(direction.y, direction.x);
-		angle = GetNewAngle(angle, targetAngle, turnRate * Time.deltaTime * 2f) * Mathf.Rad2Deg;
-
-		#endregion
-
-		velocity.x = Speed * Mathf.Cos (angle * Mathf.Deg2Rad);
-		velocity.y = Speed * Mathf.Sin (angle * Mathf.Deg2Rad);
-
-		Vector3 position = transform.position;
-		position.x -= velocity.x * Time.deltaTime;
-		position.y -= velocity.y * Time.deltaTime;
-		transform.position = position;
-
-		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		// start at half speed
+		currentSpeed = Speed * .2f;
 	}
 
-	private float GetNewAngle(float fromRad, float toRad, float step)
+	void Update()
 	{
-		// Ensure that 0 <= angle < 2pi for both "from" and "to" 
-		while (fromRad < 0) 
-			fromRad += Mathf.PI * 2f;
-		while (fromRad >= Mathf.PI * 2f)
-			fromRad -= Mathf.PI * 2f;
-		
-		while (toRad < 0) 
-			toRad += Mathf.PI * 2f; 
-		while(toRad >= Mathf.PI * 2f) 
-			toRad -= Mathf.PI * 2f; 
-		
-		if(Mathf.Abs(fromRad - toRad) < Mathf.PI) 
-		{ 
-			// The simple case - a straight lerp will do. 
-			return Mathf.Lerp(fromRad, toRad, step); 
-		} 
-		
-		// If we get here we have the more complex case. 
-		// First, increment the lesser value to be greater. 
-		if(fromRad < toRad) 
-			fromRad += Mathf.PI * 2f;
-		else 
-			toRad += Mathf.PI * 2f;
-		
-		float retVal = Mathf.Lerp(fromRad, toRad, step); 
-		
-		// Now ensure the return value is between 0 and 2pi 
-		if(retVal >= Mathf.PI * 2f)
-			retVal -= Mathf.PI * 2f;
-		return retVal;
+		if (target != null)
+		{
+			Vector2 direction = target.position - transform.position;
+			var targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			if (targetAngle < 0) targetAngle += 360f;
+			
+			// by now, 0 <= targetAngle < 360
+			
+			// angle diff
+			float angleDifference = targetAngle - angle;
+			while (angleDifference > 180) angleDifference -= 360f;
+			while (angleDifference <= -180) angleDifference += 360f;
+
+			// the turn speed is proportional to the speed of the projectile
+			var proportionalTurnRate = turnRate * currentSpeed / Speed;
+
+			if (Mathf.Abs(angleDifference) < proportionalTurnRate * Time.deltaTime)
+				angle = targetAngle;
+			else
+				angle += Mathf.Sign(angleDifference) * proportionalTurnRate * Time.deltaTime;
+
+			// keep 0 <= angle < 360f
+			if (angle < 0) angle += 360f;
+			//Debug.Log("Angle: " + angle + ", Target: " + targetAngle + ", Diff: " + angleDifference);
+
+			// set the rotation
+			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		}
+		else
+			FindTarget();
+
+		// accelerate
+		currentSpeed = Mathf.Clamp(currentSpeed + acceleration * Time.deltaTime, 0, Speed);
+
+		// move forward since we're rotated
+		transform.Translate(Vector3.right * currentSpeed * Time.deltaTime);
+	}
+
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawRay(transform.position, transform.right * 5);
+
+		if (target != null)
+		{
+			Vector2 direction = target.position - transform.position;
+			Gizmos.color = Color.green;
+			Gizmos.DrawRay(transform.position, direction * .5f);
+		}
+	}
+
+	private void FindTarget()
+	{
+		if (ParentTag == "Player")
+		{
+			// find the closest enemy
+			GameObject [] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+			if (enemies == null || enemies.Length == 0)
+				target = null;
+			else
+			{
+				GameObject closest = null;
+				float distance = Mathf.Infinity;
+				Vector3 position = transform.position;
+				foreach (GameObject go in enemies)
+				{
+					Vector3 diff = go.transform.position - position;
+					float curDistance = diff.sqrMagnitude;
+					if (curDistance < distance)
+					{
+						distance = curDistance;
+						closest = go;
+					}
+				}
+				target = closest.transform;
+			}
+		}
+		else if (ParentTag == "Enemy")
+		{
+			// target the player
+			target = GameObject.FindWithTag("Player").transform;
+		}
 	}
 }

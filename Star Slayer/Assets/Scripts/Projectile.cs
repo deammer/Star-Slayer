@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 	[HideInInspector]
 	public string ParentTag;
 	[HideInInspector]
-	public float Angle;
+	public float angle;
 
 	public float Speed = 20;
 	public int damage = 1;
@@ -17,10 +17,10 @@ public class Projectile : MonoBehaviour
 
 	void Start()
 	{
-		rotation = Quaternion.AngleAxis(Angle, Vector3.forward);
+		rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		transform.rotation = rotation;
 
-		direction = new Vector3 (Mathf.Cos (Angle * Mathf.PI / 180), Mathf.Sin (Angle * Mathf.PI / 180), 0);
+		direction = new Vector3 (Mathf.Cos (angle * Mathf.PI / 180), Mathf.Sin (angle * Mathf.PI / 180), 0);
 		Destroy(gameObject, 3f);
 	}
 

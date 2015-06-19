@@ -24,7 +24,7 @@ public class MultiShotWeapon : Weapon
 			
 			Projectile projectile = bullet.GetComponent<Projectile>();
 			projectile.ParentTag = parentTag;
-			projectile.Angle = 0;
+			projectile.angle = 0;
 		}
 		else
 		{
@@ -36,7 +36,7 @@ public class MultiShotWeapon : Weapon
 				Projectile projectile = bullet.GetComponent<Projectile>();
 				projectile.ParentTag = parentTag;
 				float accuracyOffset = GetAccuracyOffset();
-				projectile.Angle = 0;
+				projectile.angle = 0;
 			}
 		}
 	}

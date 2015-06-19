@@ -17,6 +17,10 @@ public class Weapon : MonoBehaviour
 	{
 		canShoot = true;
 		parentTag = transform.parent.gameObject.tag;
+
+		SpriteRenderer _renderer = GetComponent<SpriteRenderer>();
+		if (_renderer != null)
+			_renderer.enabled = false;
 	}
 
 	void Update ()
@@ -51,7 +55,7 @@ public class Weapon : MonoBehaviour
 		if (projectile != null)
 		{
 			projectile.ParentTag = parentTag;
-			projectile.Angle = 0 + GetAccuracyOffset ();
+			projectile.angle = 0 + GetAccuracyOffset () + transform.eulerAngles.z;
 		}
 	}
 }
