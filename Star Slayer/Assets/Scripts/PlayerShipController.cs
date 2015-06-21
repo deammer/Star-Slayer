@@ -19,8 +19,8 @@ public class PlayerShipController : MonoBehaviour
 
 	public Vector2 direction { get { return _direction; } }
 	private Vector2 _direction = new Vector2();
+	[Header("Movement")]
 	public float moveSpeed = 25f;
-
 	public bool allowRotation = true;
 	public float maxRotation = 15f;
 
