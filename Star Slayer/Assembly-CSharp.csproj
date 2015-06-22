@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\HomingProjectile.cs" />
      <Compile Include="Assets\Scripts\MoveWithBackground.cs" />
      <Compile Include="Assets\Scripts\OffsetScroller.cs" />
+     <Compile Include="Assets\Scripts\PathMover.cs" />
      <Compile Include="Assets\Scripts\PlayerShipController.cs" />
      <Compile Include="Assets\Scripts\Projectile.cs" />
      <Compile Include="Assets\Scripts\ScrollingScript.cs" />
@@ -89,6 +90,10 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{DC8BB3AD-3845-D87A-76B7-7DC5F42BC82D}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

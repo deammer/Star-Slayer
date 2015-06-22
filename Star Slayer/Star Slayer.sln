@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{CF63F424-D43D-F5C2-6D8B-96509E69A8B3}") = "Star Slayer", "Assembly-CSharp-firstpass.csproj", "{DC8BB3AD-3845-D87A-76B7-7DC5F42BC82D}"
+EndProject
 Project("{CF63F424-D43D-F5C2-6D8B-96509E69A8B3}") = "Star Slayer", "Assembly-CSharp.csproj", "{5B859ED4-A1C0-6256-E7C1-4A2A276DF976}"
 EndProject
 Project("{CF63F424-D43D-F5C2-6D8B-96509E69A8B3}") = "Star Slayer", "Assembly-CSharp-Editor.csproj", "{B307D206-7019-58E2-E556-F7EF5F6F2087}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC8BB3AD-3845-D87A-76B7-7DC5F42BC82D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8BB3AD-3845-D87A-76B7-7DC5F42BC82D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8BB3AD-3845-D87A-76B7-7DC5F42BC82D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8BB3AD-3845-D87A-76B7-7DC5F42BC82D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5B859ED4-A1C0-6256-E7C1-4A2A276DF976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5B859ED4-A1C0-6256-E7C1-4A2A276DF976}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B859ED4-A1C0-6256-E7C1-4A2A276DF976}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																					GlobalSection(MonoDevelopProperties) = preSolution
+																																																													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
