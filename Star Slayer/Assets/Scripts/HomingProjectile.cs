@@ -47,12 +47,12 @@ public class HomingProjectile : Projectile
 			// keep 0 <= angle < 360f
 			if (angle < 0) angle += 360f;
 			//Debug.Log("Angle: " + angle + ", Target: " + targetAngle + ", Diff: " + angleDifference);
-
-			// set the rotation
-			transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 		}
 		else
 			FindTarget();
+
+		// set the rotation
+		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 		// accelerate
 		currentSpeed = Mathf.Clamp(currentSpeed + acceleration * Time.deltaTime, 0, Speed);

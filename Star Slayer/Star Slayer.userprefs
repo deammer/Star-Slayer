@@ -1,15 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PathMover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EditorPlaceholder.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerShipController.cs" Line="22" Column="22" />
-      <File FileName="Assets\Scripts\ThrusterSystem.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Projectile.cs" Line="1" Column="1" />
-      <File FileName="Assets\Plugins\iTweenPath\iTweenPath.cs" Line="2" Column="10" />
-      <File FileName="Assets\Scripts\PathMover.cs" Line="10" Column="117" />
-      <File FileName="Assets\Plugins\iTween\iTween.cs" Line="6867" Column="35" />
+      <File FileName="Assets\Plugins\iTweenPath\iTweenPath.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PathMover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Plugins\iTween\iTween.cs" Line="1" Column="1" />
+      <File FileName="Assets\LevelEditorManager.cs" Line="21" Column="3" />
+      <File FileName="Assets\EditorPlaceholder.cs" Line="35" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
