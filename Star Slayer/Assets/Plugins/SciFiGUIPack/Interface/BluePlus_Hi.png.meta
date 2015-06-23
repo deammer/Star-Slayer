@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 35c81168ae2a8504e968ce7264b8d57f
-timeCreated: 1435092211
+guid: 09f31e8c94e7187499098e1227321425
+timeCreated: 1435093972
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -30,7 +30,7 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -42,7 +42,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 86, y: 76, z: 82, w: 80}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
