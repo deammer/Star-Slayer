@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
 	[SerializeField]
 	protected int health = 2;
+	protected float _actualHealth;
 
 	[HideInInspector]
 	public bool destroyed;
@@ -16,11 +17,16 @@ public class Enemy : MonoBehaviour
 		destroyed = false;
 	}
 
-	public void Damage(int amount)
+	void Start()
 	{
-		health = Mathf.Min(health - amount, 0);
+		_actualHealth = health;
+	}
 
-		if (!destroyed && health <= 0)
+	public void Damage(float amount)
+	{
+		_actualHealth = Mathf.Max(_actualHealth - amount, 0f);
+
+		if (!destroyed && _actualHealth <= 0)
 		{
 			Die();
 		}
