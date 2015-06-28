@@ -1,17 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LaserBeam.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Projectile.cs">
     <Files>
-      <File FileName="Assets\BeamFlicker.cs" Line="17" Column="97" />
+      <File FileName="Assets\Scripts\Projectile.cs" Line="59" Column="44" />
+      <File FileName="Assets\BeamFlicker.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelEditor\EditorPlaceholder.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelEditor\ControlsMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelEditor\LevelEditorManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelEditor\EditorNode.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelEditor\Data\WaveIO.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LevelEditor\Data\WaveData.cs" Line="1" Column="1" />
-      <File FileName="Assets\ElectricalBeam.cs" Line="13" Column="16" />
+      <File FileName="Assets\ElectricalBeam.cs" Line="1" Column="1" />
       <File FileName="Assets\LaserBeam.cs" Line="28" Column="36" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

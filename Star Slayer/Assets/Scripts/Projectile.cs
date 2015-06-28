@@ -54,7 +54,10 @@ public class Projectile : MonoBehaviour
 	protected void Impact()
 	{
 		if (ImpactEffect)
-			Instantiate(ImpactEffect);
+		{
+			var explosion = Instantiate(ImpactEffect);
+			explosion.position = transform.position;
+		}
 
 		Destroy(gameObject);
 	}
