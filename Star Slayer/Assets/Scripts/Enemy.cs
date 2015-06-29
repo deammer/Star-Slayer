@@ -37,13 +37,14 @@ public class Enemy : MonoBehaviour
 		if (destroyed) return;
 
 		destroyed = true;
+		transform.GetComponent<CircleCollider2D>().enabled = false;
 
 		if (explosionEffect)
 		{
 			Transform explosion = Instantiate(explosionEffect);
 			explosion.position = transform.position;
-
-			Destroy(gameObject);
 		}
+
+		Destroy(gameObject);
 	}
 }

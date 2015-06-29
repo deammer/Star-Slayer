@@ -83,9 +83,6 @@ public class PlayerShipController : MonoBehaviour
 			else
 				transform.rotation = Quaternion.AngleAxis(direction.y * maxRotation, Vector3.forward);
 		}
-
-		if (weapon != null && (Input.GetButton ("Fire") || Input.GetButton("Controller A")))
-			_weaponController.Trigger ();
 	}
 
 	public void Damage(int amount, Transform other)

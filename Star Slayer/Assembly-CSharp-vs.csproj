@@ -46,8 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BeamFlicker.cs" />
-     <Compile Include="Assets\ElectricalBeam.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX2_Demo.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_New.cs" />
@@ -63,12 +61,15 @@
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_ShurikenThreadFix.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Spawn System\CFX_SpawnSystem.cs" />
-     <Compile Include="Assets\LaserBeam.cs" />
+     <Compile Include="Assets\Scripts\BeamFlicker.cs" />
      <Compile Include="Assets\Scripts\EditorPathNode.cs" />
+     <Compile Include="Assets\Scripts\EffectMover.cs" />
+     <Compile Include="Assets\Scripts\ElectricalBeam.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HomingProjectile.cs" />
+     <Compile Include="Assets\Scripts\LaserBeam.cs" />
      <Compile Include="Assets\Scripts\LevelEditor\ControlsMenu.cs" />
      <Compile Include="Assets\Scripts\LevelEditor\Data\WaveData.cs" />
      <Compile Include="Assets\Scripts\LevelEditor\Data\WaveIO.cs" />
@@ -90,7 +91,6 @@
      <Compile Include="Assets\Scripts\Utils\Tween.cs" />
      <Compile Include="Assets\Scripts\WaveContainer.cs" />
      <Compile Include="Assets\Scripts\WaveGenerator.cs" />
-     <Compile Include="Assets\Scripts\Weapons\ComboWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\MultiShotWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Weapon.cs" />
      <None Include="Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />

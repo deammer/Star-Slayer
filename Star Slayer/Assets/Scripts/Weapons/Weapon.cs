@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
 	void Start ()
 	{
 		canShoot = true;
-		parentTag = transform.parent.gameObject.tag;
+		parentTag = transform.root.tag;
 
 		SpriteRenderer _renderer = GetComponent<SpriteRenderer>();
 		if (_renderer != null)
@@ -29,6 +29,9 @@ public class Weapon : MonoBehaviour
 			shootingDelay -= Time.deltaTime;
 		else
 			canShoot = true;
+
+		if (Input.GetButton ("Fire") || Input.GetButton("Controller A"))
+			Trigger();
 	}
 
 	virtual public void Trigger()
