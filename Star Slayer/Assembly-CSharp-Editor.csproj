@@ -74,7 +74,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="JMOAssets">
- <HintPath>E:/Documents/GitHub/Star-Slayer/Star Slayer/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ <HintPath>C:/Users/mpreaux.ISTATION.COM/Documents/GitHub/Star-Slayer/Star Slayer/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

@@ -37,7 +37,7 @@ public class WaveIO
 		}
 		
 		writer = info.CreateText();
-		writer.Write(Serialize(waveData));
+		writer.Write(Serialize(waveData).ToString());
 		writer.Close();
 
 		Debug.Log("Finished writing to file.");

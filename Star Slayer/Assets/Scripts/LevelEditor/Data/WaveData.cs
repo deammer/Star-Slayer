@@ -17,6 +17,16 @@ public class WaveData
 	public struct ShipData
 	{
 		public string shipName;
-		public List<Vector3> path;
+		public Vector3 startLocation;
+		public List<PathNode> pathNodes;
+	}
+
+	public struct PathNode
+	{
+		public Vector3 location;
+		public bool shootWhileWaiting;
+		public bool shootWhileMoving;
+		public int speed;
+		public float waitTime;
 	}
 }
