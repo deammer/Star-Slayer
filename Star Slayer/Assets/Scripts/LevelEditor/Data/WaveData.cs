@@ -16,7 +16,7 @@ public class WaveData
 	public List<ShipData> shipData;
 	public struct ShipData
 	{
-		string shipName;
+		public string shipName;
 		public List<Vector3> path;
 	}
 }

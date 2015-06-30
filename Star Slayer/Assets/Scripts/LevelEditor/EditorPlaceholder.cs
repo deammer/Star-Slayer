@@ -47,8 +47,25 @@ public class EditorPlaceholder : MonoBehaviour
 		UpdatePath();
 	}
 
-	#region Play mode
+	#region Saving
+	public static List<WaveData.ShipData> GetShipDataList()
+	{
+		List<WaveData.ShipData> list = new List<WaveData.ShipData>();
+		WaveData.ShipData data;
 
+		foreach (EditorPlaceholder ship in _instances)
+		{
+			data = new WaveData.ShipData();
+			data.shipName = "Ship Name";
+			data.path = ship.GetPath();
+			list.Add(data);
+		}
+
+		return list;
+	}
+	#endregion
+
+	#region Play mode
 	public void Play()
 	{
 		_originalPosition = transform.position;
@@ -87,7 +104,6 @@ public class EditorPlaceholder : MonoBehaviour
 			_currentNodeIndex ++;
 		}
 	}
-
 	#endregion
 
 	void OnMouseUp()
@@ -168,5 +184,13 @@ public class EditorPlaceholder : MonoBehaviour
 	public int GetIndexOfNode(EditorNode node)
 	{
 		return _nodes.IndexOf(node);
+	}
+
+	public List<Vector3> GetPath()
+	{
+		List<Vector3> data = new List<Vector3>();
+		foreach (EditorNode node in _nodes)
+			data.Add(node.transform.position);
+		return data;
 	}
 }

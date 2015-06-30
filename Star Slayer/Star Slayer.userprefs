@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Weapons\Weapon.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\TestSaveWave.xml">
     <Files>
-      <File FileName="Assets\Scripts\Weapons\Weapon.cs" Line="19" Column="34" />
-      <File FileName="Assets\Scripts\Projectile.cs" Line="37" Column="28" />
-      <File FileName="Assets\Scripts\LevelEditor\EditorPlaceholder.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelEditor\Data\WaveIO.cs" Line="39" Column="30" />
+      <File FileName="Assets\Scripts\LevelEditor\EditorPlaceholder.cs" Line="59" Column="26" />
+      <File FileName="Assets\Scripts\LevelEditor\Data\WaveData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelEditor\LevelEditorManager.cs" Line="50" Column="28" />
+      <File FileName="Assets\Resources\TestSaveWave.xml" Line="6" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

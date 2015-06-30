@@ -40,6 +40,17 @@ public class LevelEditorManager : MonoBehaviour
 		_ships.Add(placeholder.GetComponent<EditorPlaceholder>());
 	}
 
+	#region Saving
+	public void Save()
+	{
+		WaveData waveData = new WaveData();
+		waveData.name = "First Wave";
+		waveData.shipData = EditorPlaceholder.GetShipDataList();
+
+		WaveIO.SaveXML(waveData);
+	}
+	#endregion
+
 	#region Editor controls
 
 	public void Play()

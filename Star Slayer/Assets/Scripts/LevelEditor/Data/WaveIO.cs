@@ -5,13 +5,13 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Text;
 
-public class WaveIO : MonoBehaviour
+public class WaveIO
 {
-	private string _data;
+	private static string _data;
 	
 	// http://wiki.unity3d.com/index.php?title=Save_and_Load_from_XML
 	
-	private string Serialize(WaveData file)
+	private static string Serialize(WaveData file)
 	{
 		MemoryStream memStream = new MemoryStream();
 		XmlSerializer xs = new XmlSerializer(typeof(WaveData));
@@ -25,7 +25,7 @@ public class WaveIO : MonoBehaviour
 		return serialized;
 	}
 	
-	public void SaveXML()
+	public static void SaveXML(WaveData waveData)
 	{
 		StreamWriter writer;
 		FileInfo info = new FileInfo("Assets\\Resources\\TestSaveWave.xml");
@@ -37,12 +37,13 @@ public class WaveIO : MonoBehaviour
 		}
 		
 		writer = info.CreateText();
-		writer.Write(Serialize(new WaveData()));
+		writer.Write(Serialize(waveData));
 		writer.Close();
+
 		Debug.Log("Finished writing to file.");
 	}
 	
-	public void LoadXML()
+	public static void LoadXML()
 	{
 		StreamReader reader = File.OpenText("Assets\\Resources\\TestSaveWave.xml");
 		string info = reader.ReadToEnd();
