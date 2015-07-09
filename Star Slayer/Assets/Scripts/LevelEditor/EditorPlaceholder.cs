@@ -57,7 +57,16 @@ public class EditorPlaceholder : MonoBehaviour
 		{
 			data = new WaveData.ShipData();
 			data.shipName = "Ship Name";
-			data.path = ship.GetPath();
+
+			// add the path nodes
+			data.pathNodes = new List<WaveData.PathNode>();
+			WaveData.PathNode pathNode = new WaveData.PathNode();
+			foreach (EditorNode node in ship._nodes)
+			{
+				pathNode.SetFromEditorNode(node);
+				data.pathNodes.Add(pathNode);
+			}
+
 			list.Add(data);
 		}
 

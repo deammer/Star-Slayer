@@ -28,5 +28,14 @@ public class WaveData
 		public bool shootWhileMoving;
 		public int speed;
 		public float waitTime;
+
+		public void SetFromEditorNode(EditorNode node)
+		{
+			location = node.transform.position;
+			shootWhileWaiting = node.shootWhileWaiting;
+			shootWhileMoving = node.shootWhileMoving;
+			speed = node.speed;
+			waitTime = node.waitTime;
+		}
 	}
 }

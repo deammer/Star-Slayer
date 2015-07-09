@@ -18,6 +18,10 @@ public class LevelEditorManager : MonoBehaviour
 	// editor controls
 	private bool _isPlaying = false;
 
+	// debug
+	[SerializeField]
+	private Text debugText;
+
 	void Awake()
 	{
 		if (instance == null) instance = this;
@@ -31,6 +35,8 @@ public class LevelEditorManager : MonoBehaviour
 		Transform shipContainer = transform.FindChild("Ships");
 		foreach (Transform child in shipContainer)
 			_ships.Add(child.GetComponent<EditorPlaceholder>());
+
+		DebugLog(Application.dataPath);
 	}
 
 	public void AddShip()
@@ -40,6 +46,13 @@ public class LevelEditorManager : MonoBehaviour
 		_ships.Add(placeholder.GetComponent<EditorPlaceholder>());
 	}
 
+	#region Debug
+	public void DebugLog(string content)
+	{
+		debugText.text = content;
+	}
+	#endregion
+
 	#region Saving
 	public void Save()
 	{
@@ -48,6 +61,13 @@ public class LevelEditorManager : MonoBehaviour
 		waveData.shipData = EditorPlaceholder.GetShipDataList();
 
 		WaveIO.SaveXML(waveData);
+	}
+	#endregion
+
+	#region Loading
+	public void Load()
+	{
+
 	}
 	#endregion
 
