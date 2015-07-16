@@ -6,14 +6,20 @@ using System.Collections.Generic;
 /// <summary>
 /// Wave file, for serialization.
 /// </summary>
+using System.Xml.Serialization;
 
+[XmlRoot("WaveData")]
 public class WaveData
 {
 	public WaveData() {}
-	
+
+	[XmlElement("Name")]
 	public string name;
 
+	[XmlArray("ShipDataList")]
+	[XmlArrayItem("ShipData")]
 	public List<ShipData> shipData;
+
 	public struct ShipData
 	{
 		public string shipName;

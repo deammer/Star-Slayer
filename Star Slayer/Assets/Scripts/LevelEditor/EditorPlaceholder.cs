@@ -18,6 +18,11 @@ public class EditorPlaceholder : MonoBehaviour
 	private int _currentNodeIndex;
 	private float _currentSpeed;
 
+	// mouse controls
+	private bool _mouseDown = false;
+	private Vector3 _positionBeforeDrag;
+	private Vector3 _originalScale;
+
 	void Start()
 	{
 		_instances.Add(this);
@@ -115,10 +120,7 @@ public class EditorPlaceholder : MonoBehaviour
 	}
 	#endregion
 
-	void OnMouseUp()
-	{
-		Select();
-	}
+	#region Mouse controls
 
 	public void Select()
 	{
@@ -142,6 +144,53 @@ public class EditorPlaceholder : MonoBehaviour
 	{
 		_instances.Remove(this);
 	}
+	
+	
+	void OnMouseDown()
+	{
+		_originalPosition = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+		_originalScale = transform.localScale;
+		transform.localScale *= 1.3f;
+		
+		_mouseDown = true;
+		
+		_positionBeforeDrag = transform.position;
+		
+		WaveEditor.instance.HideNodePanel();
+	}
+	
+	void OnMouseUp()
+	{
+		if (_mouseDown)
+		{
+			_mouseDown = false;
+			
+			// reset the visuals
+			transform.localScale = _originalScale;
+			
+			// if it was a drag event
+			bool dragged = _positionBeforeDrag != transform.position;
+			if (dragged)
+			{
+				// update the parent EditorPlaceholder
+				//if (_parent != null)
+				//	_parent.PlaceholderMoved(this);
+			}
+			else // if it was a click event
+			{
+				Select();
+			}
+		}
+	}
+	
+	void OnMouseDrag()
+	{
+		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0);
+		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + _originalPosition;
+		transform.position = curPosition;
+	}
+
+	#endregion
 
 	#region Node callbacks
 	public void NodeMoved(EditorNode node)

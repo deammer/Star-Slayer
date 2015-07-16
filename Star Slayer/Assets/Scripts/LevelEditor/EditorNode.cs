@@ -3,7 +3,9 @@ using System.Collections;
 
 public class EditorNode : MonoBehaviour
 {
+	[HideInInspector]
 	public Transform previousNode;
+	[HideInInspector]
 	public Transform nextNode;
 
 	private bool _mouseDown = false;
@@ -60,7 +62,7 @@ public class EditorNode : MonoBehaviour
 
 	private void OnClick()
 	{
-		LevelEditorManager.instance.ShowNodePanel(this);
+		WaveEditor.instance.ShowNodePanel(this);
 	}
 
 	void OnMouseDown()
@@ -73,7 +75,7 @@ public class EditorNode : MonoBehaviour
 
 		_positionBeforeDrag = transform.position;
 
-		LevelEditorManager.instance.HideNodePanel();
+		WaveEditor.instance.HideNodePanel();
 	}
 
 	void OnMouseUp()

@@ -1,12 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WaveButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelEditor\EditorPlaceholder.cs">
     <Files>
-      <File FileName="Assets\WaveButton.cs" Line="25" Column="3" />
-      <File FileName="Assets\LevelSettingsPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets\LevelsEditor.cs" Line="18" Column="50" />
+      <File FileName="Assets\WaveEditor.cs" Line="58" Column="40" />
+      <File FileName="Assets\Scripts\LevelEditor\LevelEditorManager.cs" Line="27" Column="12" />
+      <File FileName="Assets\WaveButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\LevelsEditor.cs" Line="1" Column="1" />
       <File FileName="Assets\LevelButton.cs" Line="1" Column="1" />
-      <File FileName="Assets\WaveEditor.cs" Line="15" Column="31" />
+      <File FileName="Assets\Scripts\LevelEditor\Data\WaveIO.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelEditor\Data\LevelData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelEditor\Data\WaveData.cs" Line="1" Column="1" />
+      <File FileName="Assets\LevelSettingsPanel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelEditor\EditorPlaceholder.cs" Line="49" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -28,7 +28,10 @@ public class LevelSettingsPanel : MonoBehaviour
 		_panelName.text = name;
 
 		if (_levelNameInput.text != name)
+		{
 			_levelNameInput.text = name;
+			_level.name = name;
+		}
 	}
 
 	public void AddWave()

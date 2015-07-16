@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.IO;
 
 public class LevelsEditor : MonoBehaviour
 {
@@ -31,12 +33,28 @@ public class LevelsEditor : MonoBehaviour
 
 	public void SaveData()
 	{
+		// make sure the directory exists
+		if (!Directory.Exists(Path.Combine(Application.dataPath, "Levels")))
+			Directory.CreateDirectory(Path.Combine(Application.dataPath, "Levels"));
 
+		// save 1 file per level
+		foreach (LevelData data in _levels)
+		{
+			var fileName = "Levels/Level_" + data.name + ".xml";
+			var path = Path.Combine(Application.dataPath, fileName);
+			var serializer = new XmlSerializer(typeof(LevelData));
+			var stream = new FileStream(path, FileMode.OpenOrCreate);
+			serializer.Serialize(stream, data);
+			stream.Close();
+
+			Debug.Log("Saved level at " + path);
+		}
 	}
 
 	public void ShowLevelSettings(LevelData data)
 	{
 		levelSettingsPanel.SetActive(true);
+		levelSettingsPanel.GetComponent<LevelSettingsPanel>().SetLevel(data);
 		levelSettingsPanel.GetComponent<LevelSettingsPanel>().SetName(data.name);
 	}
 }
